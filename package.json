@@ -1,0 +1,10 @@
+{
+  "name": "react-native-gpu-info",
+  "version": "1.0.0",
+  "description": "Extract information about the GPU on Android devices",
+  "main": "index.js",
+  "keywords": [
+    "react-native"
+  ],
+  "author": "Candide Ltd"
+}
