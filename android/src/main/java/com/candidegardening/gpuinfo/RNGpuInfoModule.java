@@ -2,6 +2,7 @@
 package com.candidegardening.gpuinfo;
 
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -23,6 +24,7 @@ public class RNGpuInfoModule extends ReactContextBaseJavaModule {
 
   @ReactMethod
   public String getGlRenderer() {
+    Log.i(RNGpuInfoModule.class.getSimpleName(), "getGlRenderer");
     return PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "");
   }
 }
