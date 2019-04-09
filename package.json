@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "description": "Extracts information about the GPU on Android devices",
   "main": "index.js",
+  "typings": "index.d.ts",
   "keywords": [
     "react-native"
   ],
-  "author": "Candide Ltd"
+  "author": "Candide Ltd",
+  "peerDependencies": {
+    "react-native": "^0.58.0"
+  }
 }
