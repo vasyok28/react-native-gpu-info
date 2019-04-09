@@ -16,7 +16,6 @@ public class RNGpuInfoPackage implements ReactPackage {
       return Collections.<NativeModule>singletonList(new RNGpuInfoModule(reactContext));
     }
 
-    @Override
     public List<Class<? extends JavaScriptModule>> createJSModules() {
         return null;
     }
