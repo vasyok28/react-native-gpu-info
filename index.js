@@ -1,6 +1,11 @@
 
-import { NativeModules } from 'react-native';
+import { NativeModules } from 'react-native'
 
-const { RNGpuInfo } = NativeModules;
+const { RNGpuInfo } = NativeModules
 
-export default RNGpuInfo;
+/**
+ * Get the name of the GL renderer.
+ */
+export function getGlRenderer() {
+    return RNGpuInfo.getGlRenderer()
+}
