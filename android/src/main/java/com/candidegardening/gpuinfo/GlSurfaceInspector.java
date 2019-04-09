@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.preference.PreferenceManager;
+import android.widget.FrameLayout;
 
 public class GlSurfaceInspector {
     private GLSurfaceView glView;
@@ -16,9 +17,8 @@ public class GlSurfaceInspector {
     public void init(Activity activity) {
         glView = new GLSurfaceView(activity);
         glView.setRenderer(new RNGlRenderer(PreferenceManager.getDefaultSharedPreferences(activity)));
-        glView.setZOrderOnTop(false);
-        activity.setContentView(glView);
-        glView.getHolder().setFormat(PixelFormat.TRANSPARENT);
+        final FrameLayout rootLayout = activity.findViewById(android.R.id.content);
+        rootLayout.addView(glView, 1, 1);
     }
 
     public void onPause() {
