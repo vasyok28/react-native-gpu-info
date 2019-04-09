@@ -13,7 +13,7 @@ public class GlSurfaceInspector {
      * @param activity the owing activity whose GL Surface is to be inspected.
      */
     public void init(Activity activity) {
-        glView = new GLSurfaceView(activity)
+        glView = new GLSurfaceView(activity);
         glView.setRenderer(new RNGlRenderer(PreferenceManager.getDefaultSharedPreferences(activity)));
         activity.setContentView(glView);
     }
