@@ -2,6 +2,7 @@ package com.candidegardening.gpuinfo;
 
 import android.content.SharedPreferences;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -9,9 +10,8 @@ import javax.microedition.khronos.opengles.GL10;
 /**
  * Stub {@link GLSurfaceView} render added to the
  * view hierarchy to glean {@link GL10} data.
- *
  */
-public class RNGlRenderer implements GLSurfaceView.Renderer {
+class RNGlRenderer implements GLSurfaceView.Renderer {
     private final SharedPreferences shardedPreferences;
 
     RNGlRenderer(final SharedPreferences shardedPreferences) {
@@ -20,6 +20,7 @@ public class RNGlRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
+        Log.i(RNGlRenderer.class.getSimpleName(), gl.glGetString(GL10.GL_RENDERER));
         shardedPreferences
                 .edit()
                 .putString(Constants.GL_RENDERER, gl.glGetString(GL10.GL_RENDERER))

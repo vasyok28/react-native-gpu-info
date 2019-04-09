@@ -8,22 +8,21 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 public class RNGpuInfoModule extends ReactContextBaseJavaModule {
-  private final ReactApplicationContext reactContext;
+    private final ReactApplicationContext reactContext;
 
-  RNGpuInfoModule(ReactApplicationContext reactContext) {
-    super(reactContext);
-    this.reactContext = reactContext;
-  }
+    RNGpuInfoModule(ReactApplicationContext reactContext) {
+        super(reactContext);
+        this.reactContext = reactContext;
+    }
 
-  @Override
-  public String getName() {
-    return "RNGpuInfo";
-  }
+    @Override
+    public String getName() {
+        return "RNGpuInfo";
+    }
 
-
-  @ReactMethod
-  public String getGlRenderer() {
-    Log.i(RNGpuInfoModule.class.getSimpleName(), "getGlRenderer");
-    return PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "Unknown");
-  }
+    @ReactMethod
+    public String getGlRenderer() {
+        Log.i(RNGpuInfoModule.class.getSimpleName(), PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "Unknown"));
+        return PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "Unknown");
+    }
 }
