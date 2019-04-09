@@ -1,6 +1,7 @@
 package com.candidegardening.gpuinfo;
 
 import android.app.Activity;
+import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.preference.PreferenceManager;
 
@@ -15,7 +16,9 @@ public class GlSurfaceInspector {
     public void init(Activity activity) {
         glView = new GLSurfaceView(activity);
         glView.setRenderer(new RNGlRenderer(PreferenceManager.getDefaultSharedPreferences(activity)));
+        glView.setZOrderOnTop(false);
         activity.setContentView(glView);
+        glView.getHolder().setFormat(PixelFormat.TRANSPARENT);
     }
 
     public void onPause() {

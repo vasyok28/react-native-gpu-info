@@ -22,7 +22,6 @@ public class RNGpuInfoModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public String getGlRenderer() {
-        Log.i(RNGpuInfoModule.class.getSimpleName(), PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "Unknown"));
         return PreferenceManager.getDefaultSharedPreferences(reactContext).getString(Constants.GL_RENDERER, "Unknown");
     }
 }
