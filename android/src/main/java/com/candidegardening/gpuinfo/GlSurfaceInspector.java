@@ -1,7 +1,6 @@
 package com.candidegardening.gpuinfo;
 
 import android.app.Activity;
-import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
 import android.preference.PreferenceManager;
 import android.widget.FrameLayout;
