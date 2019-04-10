@@ -20,7 +20,6 @@ class RNGlRenderer implements GLSurfaceView.Renderer {
 
     @Override
     public void onSurfaceCreated(GL10 gl, EGLConfig config) {
-        Log.i(RNGlRenderer.class.getSimpleName(), gl.glGetString(GL10.GL_RENDERER));
         shardedPreferences
                 .edit()
                 .putString(Constants.GL_RENDERER, gl.glGetString(GL10.GL_RENDERER))
