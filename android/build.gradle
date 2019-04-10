@@ -24,7 +24,11 @@ android {
 }
 
 repositories {
+    google()
     mavenCentral()
+    maven {
+        url "$rootDir/../node_modules/react-native/android"
+    }
 }
 
 dependencies {

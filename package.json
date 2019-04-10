@@ -9,6 +9,9 @@
   ],
   "author": "Candide Ltd",
   "peerDependencies": {
-    "react-native": "^0.58.0"
+    "react-native": "^0.58.6"
+  },
+  "dependencies": {
+    "react-native": "^0.58.6"
   }
 }
