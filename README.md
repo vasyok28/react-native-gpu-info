@@ -28,7 +28,40 @@
 
 
 ## Usage
+Within your host activity add the following code;
+
+```java
+public class MainActivity extends ReactActivity { 
+	private GlSurfaceInspector surfaceInspector = new GlSurfaceInspector();
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			surfaceInspector.init(this);
+	}
+
+	@Override
+	protected void onPause() {
+			super.onPause();
+			surfaceInspector.onPause();
+	}
+
+	@Override
+	protected void onResume() {
+			super.onResume();
+			surfaceInspector.onResume();
+	}
+}
+```
+
+Then in your Javascript code import the library;
+
 ```javascript
 import RNGpuInfo from 'react-native-gpu-info';
 ```
-  
+
+And retrieve the name of the GPU chip via;
+
+```javascript
+const glRenderer = RNGpuInfo.getGlRenderer()
+```
