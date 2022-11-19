@@ -1,18 +1,4 @@
 
-# react-native-gpu-info
-
-## Getting started
-
-`$ npm install react-native-gpu-info --save`
-
-### Mostly automatic installation
-
-`$ react-native link react-native-gpu-info`
-
-### Manual installation
-
-#### Android
-
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
   - Add `import com.reactlibrary.RNGpuInfoPackage;` to the imports at the top of the file
   - Add `new RNGpuInfoPackage()` to the list returned by the `getPackages()` method
@@ -38,18 +24,6 @@ public class MainActivity extends ReactActivity {
 	public void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 			surfaceInspector.init(this);
-	}
-
-	@Override
-	protected void onPause() {
-			super.onPause();
-			surfaceInspector.onPause();
-	}
-
-	@Override
-	protected void onResume() {
-			super.onResume();
-			surfaceInspector.onResume();
 	}
 }
 ```
